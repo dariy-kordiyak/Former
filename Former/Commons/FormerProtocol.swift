@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: Inline RowFormer
 
-public protocol InlineForm: class {
+public protocol InlineForm: AnyObject {
     
     var inlineRowFormer: RowFormer { get }
     func editingDidBegin()
@@ -39,7 +39,7 @@ extension ConfigurableInlineForm where Self: RowFormer {
 
 // MARK: Selector RowFormer
 
-public protocol SelectorForm: class {
+public protocol SelectorForm: AnyObject {
     
     func editingDidBegin()
     func editingDidEnd()
@@ -64,7 +64,7 @@ extension UpdatableSelectorForm where Self: RowFormer {
 
 public protocol Formable: SelectableForm, UpdatableForm, ConfigurableForm {}
 
-public protocol SelectableForm: class {}
+public protocol SelectableForm: AnyObject {}
 
 public extension SelectableForm where Self: RowFormer {
     
@@ -77,7 +77,7 @@ public extension SelectableForm where Self: RowFormer {
     }
 }
 
-public protocol UpdatableForm: class {}
+public protocol UpdatableForm: AnyObject {}
 
 public extension UpdatableForm where Self: RowFormer {
     
@@ -97,7 +97,7 @@ public extension UpdatableForm where Self: RowFormer {
     }
 }
 
-public protocol ConfigurableForm: class {}
+public protocol ConfigurableForm: AnyObject {}
 
 public extension ConfigurableForm where Self: RowFormer {
     

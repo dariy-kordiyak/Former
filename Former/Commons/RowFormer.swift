@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol FormableRow: class {
+public protocol FormableRow: AnyObject {
     
     func updateWithRowFormer(_ rowFormer: RowFormer)
 }
